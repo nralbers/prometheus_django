@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alerts</title>
+</head>
+<body>
+{% if data %}
+    <ul>
+    {% for group in data.groups %}
+        <li>{{ group.name }}</li>
+        <ul>
+        {% for rule in group.rules %}
+            <li>{{ rule.name }}</li>
+        {% endfor %}
+        </ul>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No data available.</p>
+{% endif %}
+</body>
+</html>
